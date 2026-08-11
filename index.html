@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SPORTZONE BD | Football</title>
+  <title>SPORTZONE BD | Football News, Live Scores, Players & Clubs</title>
+
+  <meta name="description"
+    content="SPORTZONE BD - Football news, live scores, match results, player profiles, goals, clubs, leagues, Champions League, World Cup and international football updates.">
+
+  <meta name="keywords"
+    content="SPORTZONE BD, football news, live football, live scores, football players, football clubs, Champions League, World Cup, Premier League, La Liga, Bundesliga, Serie A, Ligue 1">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical"
+    href="https://soron14.github.io/SPORTZONE-BD/">
+
+  <!-- Open Graph -->
+
+  <meta property="og:title"
+    content="SPORTZONE BD | Football News, Players & Live Scores">
+
+  <meta property="og:description"
+    content="Football news, live matches, players, goals, clubs, leagues and international football.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url"
+    content="https://soron14.github.io/SPORTZONE-BD/">
+
+  <meta name="theme-color" content="#00e676">
+
+  <!-- Google Search Console verification code goes here -->
+
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -14,71 +47,106 @@
       font-family: Arial, sans-serif;
     }
 
-    body {
-      background: #0b0f14;
-      color: #fff;
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* Header */
+    body {
+      background: #080d12;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* HEADER */
+
     header {
-      background: #111820;
-      padding: 18px 6%;
+      background: rgba(15, 22, 30, 0.98);
+      padding: 12px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
+      border-bottom: 1px solid #202b35;
     }
+
+
+    /* LOGO */
 
     .logo {
-      font-size: 25px;
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
 
-    .logo span {
-      color: #00e676;
+    .logo img {
+      width: 150px;
+      height: auto;
+      max-height: 58px;
+      object-fit: contain;
+      display: block;
     }
-.logo img {
-  height: 50px;
-  width: auto;
-  display: block;
-}
+
+
+    /* NAVIGATION */
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     nav a {
       color: #ddd;
       text-decoration: none;
-      margin-left: 20px;
-      font-size: 15px;
+      font-size: 14px;
+      transition: .2s;
     }
 
     nav a:hover {
       color: #00e676;
     }
 
-    /* Hero */
+
+    /* HERO */
+
     .hero {
-      min-height: 380px;
-      padding: 70px 6%;
+      min-height: 430px;
+      padding: 80px 6%;
       display: flex;
       align-items: center;
+
       background:
-        linear-gradient(90deg, #07100bd9, #07100b80),
+        linear-gradient(90deg, #06100bdd, #06100b80),
         url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=80")
         center/cover;
     }
 
     .hero-content {
-      max-width: 650px;
+      max-width: 760px;
     }
 
     .hero h1 {
-      font-size: 45px;
-      margin-bottom: 15px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #00e676;
     }
 
     .hero p {
       color: #ddd;
-      margin-bottom: 25px;
+      font-size: 17px;
+      margin-bottom: 28px;
     }
 
     .btn {
@@ -91,33 +159,89 @@
       font-weight: bold;
     }
 
-    /* Sections */
-    .container {
+
+    /* SEARCH */
+
+    .search-box {
       width: 88%;
-      max-width: 1200px;
-      margin: 40px auto;
+      max-width: 850px;
+      margin: -30px auto 40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 17px 20px;
+      border: 1px solid #29343e;
+      border-radius: 12px;
+      background: #151c24;
+      color: white;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-box input:focus {
+      border-color: #00e676;
+    }
+
+
+    /* CONTAINER */
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: 55px auto;
     }
 
     .section-title {
-      font-size: 25px;
-      margin-bottom: 20px;
+      font-size: 27px;
+      margin-bottom: 22px;
       border-left: 4px solid #00e676;
-      padding-left: 10px;
+      padding-left: 12px;
     }
 
-    /* Match Cards */
-    .matches {
+    .section-subtitle {
+      color: #999;
+      margin-top: -12px;
+      margin-bottom: 22px;
+    }
+
+
+    /* GRIDS */
+
+    .matches,
+    .players,
+    .clubs,
+    .news,
+    .tournaments,
+    .countries {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 18px;
     }
 
+
+    /* GENERAL CARD */
+
+    .card {
+      background: #131a22;
+      border: 1px solid #202b35;
+      border-radius: 13px;
+      padding: 20px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #00e676;
+    }
+
+
+    /* MATCHES */
+
     .match-card {
-      background: #151c24;
-      padding: 22px;
-      border-radius: 12px;
       text-align: center;
-      border: 1px solid #202a34;
     }
 
     .live {
@@ -126,11 +250,18 @@
       margin-bottom: 12px;
     }
 
+    .upcoming {
+      color: #ffc107;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
     .teams {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin: 20px 0;
+      gap: 10px;
+      margin: 18px 0;
     }
 
     .team {
@@ -138,36 +269,112 @@
     }
 
     .score {
-      font-size: 27px;
       color: #00e676;
+      font-size: 25px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
-    /* News */
-    .news {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    .muted {
+      color: #999;
+      font-size: 14px;
     }
+
+
+    /* PLAYERS */
+
+    .player-card {
+      text-align: center;
+    }
+
+    .player-card img,
+    .news-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+
+    .player-card h3,
+    .club-card h3,
+    .news-card h3 {
+      margin-bottom: 7px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #26313b;
+      margin-top: 13px;
+      padding-top: 10px;
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .stat-row strong {
+      color: #00e676;
+    }
+
+
+    /* CLUBS */
+
+    .club-card {
+      text-align: center;
+    }
+
+    .club-logo {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      background: #1b252f;
+    }
+
+
+    /* LEAGUES */
+
+    .league-card {
+      padding: 25px;
+      text-align: center;
+      background: linear-gradient(145deg, #151e27, #10161d);
+      border: 1px solid #27333e;
+      border-radius: 13px;
+      transition: .25s;
+    }
+
+    .league-card:hover {
+      transform: translateY(-4px);
+      border-color: #00e676;
+    }
+
+    .league-card .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+
+    /* NEWS */
 
     .news-card {
-      background: #151c24;
-      border-radius: 12px;
+      background: #131a22;
+      border-radius: 13px;
       overflow: hidden;
+      border: 1px solid #202b35;
     }
 
     .news-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
+      height: 180px;
+      border-radius: 0;
+      margin: 0;
     }
 
     .news-content {
       padding: 18px;
-    }
-
-    .news-content h3 {
-      margin-bottom: 10px;
     }
 
     .news-content p {
@@ -175,314 +382,1349 @@
       font-size: 14px;
     }
 
-    /* Tournaments */
-    .tournaments {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
+
+    /* BADGE */
+
+    .badge {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: #182d24;
+      color: #00e676;
+      font-size: 12px;
+      margin-bottom: 8px;
     }
 
-    .tournament {
-      background: #151c24;
-      padding: 25px;
+
+    /* COUNTRIES */
+
+    .country-card {
       text-align: center;
-      border-radius: 10px;
-      transition: 0.3s;
+      font-size: 18px;
+      font-weight: bold;
     }
 
-    .tournament:hover {
-      transform: translateY(-5px);
-      background: #1c2630;
+    .country-card span {
+      display: block;
+      font-size: 35px;
+      margin-bottom: 5px;
     }
 
-    /* Footer */
+
+    /* TABLE */
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: #131a22;
+      border-radius: 12px;
+      border: 1px solid #202b35;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th,
+    td {
+      padding: 13px;
+      text-align: left;
+      border-bottom: 1px solid #25303a;
+    }
+
+    th {
+      color: #00e676;
+      background: #172029;
+    }
+
+    td {
+      color: #ddd;
+    }
+
+
+    /* FOOTER */
+
     footer {
-      background: #111820;
+      background: #0e151c;
       text-align: center;
-      padding: 30px 15px;
-      margin-top: 50px;
-      color: #aaa;
+      padding: 40px 15px;
+      margin-top: 70px;
+      color: #999;
+      border-top: 1px solid #202b35;
     }
 
-    /* Mobile */
-    @media(max-width: 700px) {
+    footer h3 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      margin: 18px 0;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #00e676;
+    }
+
+
+    /* MOBILE */
+
+    @media(max-width: 800px) {
 
       header {
         flex-direction: column;
-        gap: 15px;
+        gap: 14px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      .hero {
+        min-height: 380px;
+        padding: 55px 7%;
+      }
+
+      .container {
+        width: 92%;
+      }
+
+    }
+
+
+    @media(max-width: 500px) {
+
+      .logo img {
+        width: 125px;
+        max-height: 48px;
       }
 
       nav a {
-        margin: 0 6px;
-        font-size: 13px;
-      }
-.logo img {
-  height: 42px;
-  max-width: 160px;
-  object-fit: contain;
-}
-      .hero {
-        min-height: 320px;
-        padding: 50px 7%;
+        font-size: 12px;
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 34px;
       }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .matches,
+      .players,
+      .clubs,
+      .news,
+      .tournaments,
+      .countries {
+        grid-template-columns: 1fr;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
   <!-- HEADER -->
+
   <header>
 
-    <div class="logo">
-  <img src="file_00000000d9d88207a3372bb6f5531ebf.png" alt="SPORTZONE BD Logo">
-</div>
+    <a href="#home" class="logo">
+
+      <img
+        src="file_00000000d9d88207a3372bb6f5531ebf.png"
+        alt="SPORTZONE BD Football Logo">
+
+    </a>
+
 
     <nav>
-      <a href="#">Home</a>
+
+      <a href="#home">Home</a>
+
       <a href="#matches">Matches</a>
+
+      <a href="#players">Players</a>
+
+      <a href="#clubs">Clubs</a>
+
+      <a href="#leagues">Leagues</a>
+
       <a href="#news">News</a>
-      <a href="#tournaments">Tournaments</a>
+
     </nav>
 
   </header>
 
 
-  <!-- HERO -->
-  <section class="hero">
 
-    <div class="hero-content">
+  <!-- MAIN CONTENT -->
 
-      <h1>Football. Passion. Action.</h1>
+  <main>
 
-      <p>
-        ফুটবলের সর্বশেষ খবর, ম্যাচ, স্কোর,
-        টুর্নামেন্ট ও খেলোয়াড়দের আপডেট—
-        সবকিছু এক জায়গায়।
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <h1>
+
+          <span>SPORTZONE BD</span><br>
+
+          Football. Passion. Action.
+
+        </h1>
+
+
+        <p>
+
+          Football news, live scores, match results, player statistics,
+          clubs, leagues, Champions League, World Cup and international
+          football — all in one place.
+
+        </p>
+
+
+        <a href="#matches" class="btn">
+
+          Explore Football
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+      <input
+        type="search"
+        id="siteSearch"
+        placeholder="Search players, clubs, leagues or countries..."
+        aria-label="Search football players, clubs, leagues and countries">
+
+    </div>
+
+
+
+    <!-- LIVE MATCHES -->
+
+    <section class="container" id="matches">
+
+      <h2 class="section-title">
+
+        🔴 Live & Upcoming Matches
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Follow football matches, scores and upcoming fixtures.
+
       </p>
 
-      <a href="#matches" class="btn">
-        View Matches
-      </a>
 
-    </div>
-
-  </section>
+      <div class="matches">
 
 
-  <!-- MATCHES -->
-  <section class="container" id="matches">
+        <article class="card match-card">
 
-    <h2 class="section-title">
-      🔴 Live Matches
-    </h2>
+          <div class="live">
 
-    <div class="matches">
+            ● LIVE
 
-      <div class="match-card">
+          </div>
 
-        <div class="live">
-          ● LIVE
-        </div>
 
-        <div class="teams">
+          <div class="teams">
 
-          <div class="team">
+            <div class="team">
+
+              Barcelona
+
+            </div>
+
+
+            <div class="score">
+
+              2 - 1
+
+            </div>
+
+
+            <div class="team">
+
+              Real Madrid
+
+            </div>
+
+          </div>
+
+
+          <p class="muted">
+
+            67' • La Liga
+
+          </p>
+
+        </article>
+
+
+
+        <article class="card match-card">
+
+          <div class="upcoming">
+
+            UPCOMING
+
+          </div>
+
+
+          <div class="teams">
+
+            <div class="team">
+
+              Liverpool
+
+            </div>
+
+
+            <div class="score">
+
+              VS
+
+            </div>
+
+
+            <div class="team">
+
+              Arsenal
+
+            </div>
+
+          </div>
+
+
+          <p class="muted">
+
+            Today • Premier League
+
+          </p>
+
+        </article>
+
+
+
+        <article class="card match-card">
+
+          <div class="upcoming">
+
+            UPCOMING
+
+          </div>
+
+
+          <div class="teams">
+
+            <div class="team">
+
+              PSG
+
+            </div>
+
+
+            <div class="score">
+
+              VS
+
+            </div>
+
+
+            <div class="team">
+
+              Bayern Munich
+
+            </div>
+
+          </div>
+
+
+          <p class="muted">
+
+            Tomorrow • Champions League
+
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PLAYERS -->
+
+    <section class="container" id="players">
+
+      <h2 class="section-title">
+
+        ⭐ Top Football Players
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Player profiles, clubs, goals and football statistics.
+
+      </p>
+
+
+      <div class="players">
+
+
+        <article class="card player-card searchable">
+
+          <img
+            src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=700&q=80"
+            alt="Kylian Mbappe football player">
+
+          <span class="badge">
+
+            Forward
+
+          </span>
+
+
+          <h3>
+
+            Kylian Mbappé
+
+          </h3>
+
+
+          <p class="muted">
+
+            Real Madrid • France
+
+          </p>
+
+
+          <div class="stat-row">
+
+            <span>Goals</span>
+
+            <strong>—</strong>
+
+          </div>
+
+
+          <div class="stat-row">
+
+            <span>Club</span>
+
+            <strong>Real Madrid</strong>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="card player-card searchable">
+
+          <img
+            src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=700&q=80"
+            alt="Erling Haaland football player">
+
+          <span class="badge">
+
+            Forward
+
+          </span>
+
+
+          <h3>
+
+            Erling Haaland
+
+          </h3>
+
+
+          <p class="muted">
+
+            Manchester City • Norway
+
+          </p>
+
+
+          <div class="stat-row">
+
+            <span>Goals</span>
+
+            <strong>—</strong>
+
+          </div>
+
+
+          <div class="stat-row">
+
+            <span>Club</span>
+
+            <strong>Manchester City</strong>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="card player-card searchable">
+
+          <img
+            src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80"
+            alt="Vinicius Junior football player">
+
+          <span class="badge">
+
+            Forward
+
+          </span>
+
+
+          <h3>
+
+            Vinícius Júnior
+
+          </h3>
+
+
+          <p class="muted">
+
+            Real Madrid • Brazil
+
+          </p>
+
+
+          <div class="stat-row">
+
+            <span>Goals</span>
+
+            <strong>—</strong>
+
+          </div>
+
+
+          <div class="stat-row">
+
+            <span>Club</span>
+
+            <strong>Real Madrid</strong>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CLUBS -->
+
+    <section class="container" id="clubs">
+
+      <h2 class="section-title">
+
+        🏟️ Popular Football Clubs
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Explore major clubs, players, competitions and football history.
+
+      </p>
+
+
+      <div class="clubs">
+
+
+        <article class="card club-card searchable">
+
+          <div class="club-logo">
+
+            🔵🔴
+
+          </div>
+
+          <h3>
+
             Barcelona
+
+          </h3>
+
+          <p class="muted">
+
+            Spain • La Liga
+
+          </p>
+
+        </article>
+
+
+
+        <article class="card club-card searchable">
+
+          <div class="club-logo">
+
+            ⚪
+
           </div>
 
-          <div class="score">
-            2 - 1
-          </div>
+          <h3>
 
-          <div class="team">
             Real Madrid
+
+          </h3>
+
+          <p class="muted">
+
+            Spain • La Liga
+
+          </p>
+
+        </article>
+
+
+
+        <article class="card club-card searchable">
+
+          <div class="club-logo">
+
+            🔴
+
           </div>
 
-        </div>
+          <h3>
 
-        <p>67'</p>
-
-      </div>
-
-
-      <div class="match-card">
-
-        <div class="live">
-          UPCOMING
-        </div>
-
-        <div class="teams">
-
-          <div class="team">
             Liverpool
+
+          </h3>
+
+          <p class="muted">
+
+            England • Premier League
+
+          </p>
+
+        </article>
+
+
+
+        <article class="card club-card searchable">
+
+          <div class="club-logo">
+
+            🔵
+
           </div>
 
-          <div class="score">
-            VS
+          <h3>
+
+            Manchester City
+
+          </h3>
+
+          <p class="muted">
+
+            England • Premier League
+
+          </p>
+
+        </article>
+
+
+
+        <article class="card club-card searchable">
+
+          <div class="club-logo">
+
+            🔴⚪
+
           </div>
 
-          <div class="team">
+          <h3>
+
             Arsenal
+
+          </h3>
+
+          <p class="muted">
+
+            England • Premier League
+
+          </p>
+
+        </article>
+
+
+
+        <article class="card club-card searchable">
+
+          <div class="club-logo">
+
+            🔵🔴
+
           </div>
 
-        </div>
+          <h3>
 
-        <p>Today • 10:00 PM</p>
-
-      </div>
-
-
-      <div class="match-card">
-
-        <div class="live">
-          UPCOMING
-        </div>
-
-        <div class="teams">
-
-          <div class="team">
             PSG
-          </div>
 
-          <div class="score">
-            VS
-          </div>
+          </h3>
 
-          <div class="team">
-            Bayern
-          </div>
+          <p class="muted">
 
-        </div>
+            France • Ligue 1
 
-        <p>Tomorrow • 1:00 AM</p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- NEWS -->
-  <section class="container" id="news">
-
-    <h2 class="section-title">
-      📰 Latest Football News
-    </h2>
-
-    <div class="news">
-
-      <div class="news-card">
-
-        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=800&q=80">
-
-        <div class="news-content">
-
-          <h3>Latest Football Updates</h3>
-
-          <p>
-            ফুটবল বিশ্বের সর্বশেষ খবর ও গুরুত্বপূর্ণ আপডেট।
           </p>
 
-        </div>
+        </article>
+
 
       </div>
 
+    </section>
 
-      <div class="news-card">
 
-        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80">
 
-        <div class="news-content">
+    <!-- LEAGUES -->
 
-          <h3>Transfer News</h3>
+    <section class="container" id="leagues">
 
-          <p>
-            গুরুত্বপূর্ণ খেলোয়াড়দের transfer নিয়ে সর্বশেষ খবর।
+      <h2 class="section-title">
+
+        🏆 Major Football Competitions
+
+      </h2>
+
+
+      <div class="tournaments">
+
+
+        <article class="league-card searchable">
+
+          <div class="icon">
+
+            🌍
+
+          </div>
+
+
+          <h3>
+
+            FIFA World Cup
+
+          </h3>
+
+
+          <p class="muted">
+
+            International football's biggest tournament.
+
           </p>
 
-        </div>
-
-      </div>
+        </article>
 
 
-      <div class="news-card">
 
-        <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80">
+        <article class="league-card searchable">
 
-        <div class="news-content">
+          <div class="icon">
 
-          <h3>Match Highlights</h3>
+            ⭐
 
-          <p>
-            বড় ম্যাচগুলোর গুরুত্বপূর্ণ মুহূর্ত ও ফলাফল।
+          </div>
+
+
+          <h3>
+
+            UEFA Champions League
+
+          </h3>
+
+
+          <p class="muted">
+
+            Europe's elite club competition.
+
           </p>
 
-        </div>
+        </article>
+
+
+
+        <article class="league-card searchable">
+
+          <div class="icon">
+
+            🏴
+
+          </div>
+
+
+          <h3>
+
+            Premier League
+
+          </h3>
+
+
+          <p class="muted">
+
+            England's top football league.
+
+          </p>
+
+        </article>
+
+
+
+        <article class="league-card searchable">
+
+          <div class="icon">
+
+            🇪🇸
+
+          </div>
+
+
+          <h3>
+
+            La Liga
+
+          </h3>
+
+
+          <p class="muted">
+
+            Spain's premier football competition.
+
+          </p>
+
+        </article>
+
+
+
+        <article class="league-card searchable">
+
+          <div class="icon">
+
+            🇮🇹
+
+          </div>
+
+
+          <h3>
+
+            Serie A
+
+          </h3>
+
+
+          <p class="muted">
+
+            Italy's top football league.
+
+          </p>
+
+        </article>
+
+
+
+        <article class="league-card searchable">
+
+          <div class="icon">
+
+            🇩🇪
+
+          </div>
+
+
+          <h3>
+
+            Bundesliga
+
+          </h3>
+
+
+          <p class="muted">
+
+            Germany's leading football league.
+
+          </p>
+
+        </article>
+
+
+
+        <article class="league-card searchable">
+
+          <div class="icon">
+
+            🇫🇷
+
+          </div>
+
+
+          <h3>
+
+            Ligue 1
+
+          </h3>
+
+
+          <p class="muted">
+
+            France's top division.
+
+          </p>
+
+        </article>
+
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- TOURNAMENTS -->
-  <section class="container" id="tournaments">
 
-    <h2 class="section-title">
-      🏆 Popular Tournaments
-    </h2>
+    <!-- STANDINGS -->
 
-    <div class="tournaments">
+    <section class="container">
 
-      <div class="tournament">
-        🌍 FIFA World Cup
+      <h2 class="section-title">
+
+        📊 League Standings
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        League standings and competition statistics.
+
+      </p>
+
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>#</th>
+
+              <th>Club</th>
+
+              <th>Played</th>
+
+              <th>Points</th>
+
+              <th>GD</th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+
+              <td>1</td>
+
+              <td>Example FC</td>
+
+              <td>0</td>
+
+              <td>0</td>
+
+              <td>0</td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>2</td>
+
+              <td>Example United</td>
+
+              <td>0</td>
+
+              <td>0</td>
+
+              <td>0</td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>3</td>
+
+              <td>Example City</td>
+
+              <td>0</td>
+
+              <td>0</td>
+
+              <td>0</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
       </div>
 
-      <div class="tournament">
-        ⭐ UEFA Champions League
+    </section>
+
+
+
+    <!-- INTERNATIONAL FOOTBALL -->
+
+    <section class="container">
+
+      <h2 class="section-title">
+
+        🌎 International Football
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Football teams and competitions from around the world.
+
+      </p>
+
+
+      <div class="countries">
+
+
+        <article class="card country-card searchable">
+
+          <span>🇦🇷</span>
+
+          Argentina
+
+        </article>
+
+
+
+        <article class="card country-card searchable">
+
+          <span>🇧🇷</span>
+
+          Brazil
+
+        </article>
+
+
+
+        <article class="card country-card searchable">
+
+          <span>🇫🇷</span>
+
+          France
+
+        </article>
+
+
+
+        <article class="card country-card searchable">
+
+          <span>🇪🇸</span>
+
+          Spain
+
+        </article>
+
+
+
+        <article class="card country-card searchable">
+
+          <span>🏴</span>
+
+          England
+
+        </article>
+
+
+
+        <article class="card country-card searchable">
+
+          <span>🇩🇪</span>
+
+          Germany
+
+        </article>
+
+
       </div>
 
-      <div class="tournament">
-        🏴 Premier League
+    </section>
+
+
+
+    <!-- NEWS -->
+
+    <section class="container" id="news">
+
+      <h2 class="section-title">
+
+        📰 Latest Football News
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Football news, transfers, match reports and tournament updates.
+
+      </p>
+
+
+      <div class="news">
+
+
+        <article class="news-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=800&q=80"
+            alt="Football match">
+
+          <div class="news-content">
+
+            <span class="badge">
+
+              Football
+
+            </span>
+
+
+            <h3>
+
+              Latest Football Updates
+
+            </h3>
+
+
+            <p>
+
+              Latest football stories, match developments and important
+              updates from around the world.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="news-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80"
+            alt="Football transfer news">
+
+          <div class="news-content">
+
+            <span class="badge">
+
+              Transfers
+
+            </span>
+
+
+            <h3>
+
+              Transfer News
+
+            </h3>
+
+
+            <p>
+
+              Follow major football transfers, rumours and club movements.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="news-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80"
+            alt="Football match highlights">
+
+          <div class="news-content">
+
+            <span class="badge">
+
+              Match
+
+            </span>
+
+
+            <h3>
+
+              Match Highlights
+
+            </h3>
+
+
+            <p>
+
+              Match results, important moments and football analysis.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
       </div>
 
-      <div class="tournament">
-        🇪🇸 La Liga
-      </div>
+    </section>
 
-      <div class="tournament">
-        🇮🇹 Serie A
-      </div>
 
-    </div>
+  </main>
 
-  </section>
 
 
   <!-- FOOTER -->
+
   <footer>
 
-    <h3>SPORTZONE BD</h3>
+    <h3>
+
+      SPORTZONE BD
+
+    </h3>
+
 
     <p>
-      Football News & Updates
+
+      Football News, Live Scores, Players, Clubs & Tournaments
+
     </p>
 
-    <br>
+
+    <div class="footer-links">
+
+      <a href="#home">Home</a>
+
+      <a href="#matches">Matches</a>
+
+      <a href="#players">Players</a>
+
+      <a href="#clubs">Clubs</a>
+
+      <a href="#leagues">Leagues</a>
+
+      <a href="#news">News</a>
+
+    </div>
+
 
     <p>
+
       © 2026 SPORTZONE BD. All Rights Reserved.
+
     </p>
 
   </footer>
 
 
+
+  <!-- SEARCH SCRIPT -->
+
+  <script>
+
+    const searchInput =
+      document.getElementById("siteSearch");
+
+    const searchableItems =
+      document.querySelectorAll(".searchable");
+
+
+    searchInput.addEventListener("input", function () {
+
+      const query =
+        this.value.toLowerCase().trim();
+
+
+      searchableItems.forEach(function (item) {
+
+        const text =
+          item.textContent.toLowerCase();
+
+
+        if (text.includes(query)) {
+
+          item.style.display = "";
+
+        } else {
+
+          item.style.display = "none";
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+
 </body>
+
 </html>

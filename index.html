@@ -495,61 +495,66 @@
     }
 
 
-    /* MOBILE */
+    /* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
 
-    @media(max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-      header {
-        flex-direction: column;
-        gap: 14px;
-      }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
 
-      nav {
-        gap: 10px;
-      }
+  nav a {
+    font-size: 13px;
+  }
 
-      .hero {
-        min-height: 380px;
-        padding: 55px 7%;
-      }
+  .hero {
+    min-height: auto;
+    padding: 50px 20px;
+  }
 
-      .container {
-        width: 92%;
-      }
+  .hero h1 {
+    font-size: 36px;
+  }
 
-    }
+  .hero p {
+    font-size: 15px;
+  }
 
+  .search-box {
+    width: 92%;
+    margin: -20px auto 30px;
+  }
 
-    @media(max-width: 500px) {
+  .search-box input {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-      .logo img {
-        width: 125px;
-        max-height: 48px;
-      }
+  .container {
+    width: 92%;
+    margin: 30px auto;
+  }
 
-      nav a {
-        font-size: 12px;
-      }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .matches,
-      .players,
-      .clubs,
-      .news,
-      .tournaments,
-      .countries {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
+  .matches,
+  .players,
+  .clubs,
+  .news,
+  .tournaments,
+  .countries {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 
 </head>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+l<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -258,47 +258,81 @@
     box-shadow: 0 12px 30px rgba(0, 230, 118, 0.15);
 }
 
-    /* MATCHES */
+/* MATCHES */
 
-    .match-card {
-      text-align: center;
-    }
+.match-card {
+  background: linear-gradient(145deg, #111827, #0b1220);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 18px;
+  margin: 14px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  text-align: center;
+  overflow: hidden;
+}
 
-    .live {
-      color: #ff5252;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+.live,
+.upcoming {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
 
-    .upcoming {
-      color: #ffc107;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+.live {
+  color: #fff;
+  background: rgba(255,45,45,0.18);
+  border: 1px solid rgba(255,82,82,0.45);
+}
 
-    .teams {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 10px;
-      margin: 18px 0;
-    }
+.upcoming {
+  color: #ffd43b;
+  background: rgba(255,193,7,0.12);
+  border: 1px solid rgba(255,193,7,0.35);
+}
 
-    .team {
-      font-weight: bold;
-    }
+.teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+}
 
-    .score {
-      color: #00e676;
-      font-size: 25px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
+.team {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
 
-    .muted {
-      color: #999;
-      font-size: 14px;
-    }
+.score {
+  color: #00e676;
+  font-size: 25px;
+  font-weight: 900;
+  white-space: nowrap;
+  padding: 0 8px;
+}
+
+.muted {
+  color: #a7adb8;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.match-card::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 3px;
+  margin: 15px auto 0;
+  border-radius: 10px;
+  background: #00e676;
+  opacity: 0.7;
+}
 
 
     /* PLAYERS */
